@@ -14,5 +14,15 @@ class ApplicationController < Sinatra::Base
     police_station =PoliceStation.all
     police_station.to_json
   end
+  post "/crimes" do
+   crime=Crime.create(params
+    # title:params[:title],
+    # area:params[:area],
+    # description:params[:description],
+    # police_station_id:params[:police_station_id]
+   
+    )
+   crime.to_json(include: :police_station)
+  end
 
 end
