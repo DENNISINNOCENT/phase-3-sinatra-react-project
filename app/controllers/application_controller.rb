@@ -10,4 +10,9 @@ class ApplicationController < Sinatra::Base
     crimes.to_json(include: :police_station)
   end
 
+   get '/police_stations' do
+    police_station =PoliceStation.all
+    police_station.to_json
+  end
+
 end
