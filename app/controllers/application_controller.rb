@@ -36,6 +36,15 @@ crime=Crime.find(params[:id])
 crime.destroy
 crime.to_json
 end
+patch '/crimes/:id' do
+  crime = Crime.find(params[:id])
+  crime.update(
+    title: params[:title],
+    description: params[:description],
+    area:params[:area]
+  )
+  crime.to_json
+end
 
 
 end
