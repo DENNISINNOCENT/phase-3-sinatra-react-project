@@ -31,5 +31,11 @@ post"/police_stations" do
 )
 police_station.to_json
  end
+ delete "/crimes/:id" do
+crime=Crime.find(params[:id])
+crime.destroy
+crime.to_json
+end
+
 
 end
